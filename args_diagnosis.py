@@ -49,6 +49,10 @@ def parse_args():
 
 
 args = parse_args()
+# argparse with type=bool can treat string inputs oddly (e.g. "False" -> True),
+# normalize `save_dataset` to a proper boolean when a string is passed.
+if isinstance(args.save_dataset, str):
+    args.save_dataset = args.save_dataset.lower() in ('1', 'true', 't', 'yes', 'y')
 
 if args.save_dataset:
     if args.dataset_name == 'XJTU_gearbox':
