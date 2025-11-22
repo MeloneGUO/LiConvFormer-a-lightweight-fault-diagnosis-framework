@@ -1,0 +1,10 @@
+# Core requirements based on README and repository imports
+python==3.8
+torch==1.10.1
+numpy==1.22.0
+pandas
+scikit-learn
+scipy
+tqdm
+# Optional: specify torchvision if you plan to use related utilities
+# torchvision
